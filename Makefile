@@ -1,11 +1,5 @@
-run:
-	go run cmd/main.go
-
 build:
-	go build -o chat-app cmd/main.go
+    docker build -t chat-app .
 
-docker-up:
-	docker-compose up --build -d
-
-docker-down:
-	docker-compose down
+run:
+    docker run -p 8080:8080 chat-app

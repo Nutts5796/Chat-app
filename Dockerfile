@@ -1,5 +1,10 @@
-FROM golang:1.18
+FROM golang:1.20 AS build
+
 WORKDIR /app
+
 COPY . .
+
 RUN go mod tidy
-CMD ["go", "run", "cmd/main.go"]
+RUN go build -o chat-app .
+
+CMD ["./chat-app"]
