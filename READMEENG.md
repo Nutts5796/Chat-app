@@ -1,4 +1,4 @@
-![Скриншот](images/Go)
+![Скриншот](images/Go.png)
 
 # Library App
 A simple REST API for managing books in a library, written in Go. The project uses Docker for containerization, PostgreSQL for data storage, and Makefile for command automation.
