@@ -1,5 +1,10 @@
+.PHONY: build run migrate
+
 build:
-    docker build -t chat-app .
+	docker-compose build
 
 run:
-    docker run -p 8080:8080 chat-app
+	docker-compose up
+
+migrate:
+	docker-compose exec db psql -U postgres -d library -f /app/migrations/001_create_books_table.sql

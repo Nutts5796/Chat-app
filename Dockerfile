@@ -1,10 +1,13 @@
-FROM golang:1.20 AS build
+FROM golang:1.23-alpine
 
 WORKDIR /app
 
 COPY . .
 
-RUN go mod tidy
-RUN go build -o chat-app .
+RUN go mod download
 
-CMD ["./chat-app"]
+RUN go build -o library-app .
+
+EXPOSE 8080
+
+CMD ["./library-app"]
