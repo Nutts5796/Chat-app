@@ -66,5 +66,4 @@ Stop the containers:
     make down
 Apply migrations:
     make migrate
-│   └── 001_create_books_table.sql
-└── docker-compose.yml
+
